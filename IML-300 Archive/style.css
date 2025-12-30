@@ -1,0 +1,77 @@
+/* Set the font for everything to Courier Bold */
+* {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
+/* Set the background color to #F5E9D2 */
+body {
+  background-color: #F5E9D2;
+}
+
+/* Hover animation for headings to highlight the text */
+h1::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+h1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: hsl(17, 70%, 65%);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+h3{
+  font-size: 80px;
+  position:relative;
+}
+
+h1 {
+  position: relative;
+  font-size: 5;
+}
+
+/* Add margin between each div */
+div {
+  margin-right: 40px; /* Adjust this value to control the spacing */
+  margin-left: 40px;
+}
+
+/* Set some basic styles for the HTML and body elements */
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+
+  place-content: center;
+  font-family: system-ui, sans-serif;
+   border: 50px solid #000; 
+}
+
+/* Apply different grid layout for landscape orientation */
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
+  }
+}

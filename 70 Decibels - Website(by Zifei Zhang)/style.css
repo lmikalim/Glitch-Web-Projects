@@ -1,0 +1,402 @@
+/* --- GENERAL STYLING --- */
+body {
+  background-color: black;
+  color: white;
+  font-family: "Syne Mono", monospace;
+}
+
+/* --- HOMEPAGE --- */
+#homepageJS {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#homepageContainer {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5em;
+  z-index: 1;
+  /*     border: 2pt solid lawngreen; */
+}
+
+#centerText {
+  width: 100vw;
+  position: absolute;
+  margin-top: 55vh;
+  text-align: center;
+/*   border: 2px solid green; */
+  
+/*   opacity: 0.1; */
+}
+.reveal {
+/*   opacity: 1; */
+  border: 2px solid green;
+  background-color:yellow;
+}
+
+.decibelCounter {
+  font-size: 100pt;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.reminder {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.startGame {
+  text-decoration: none;
+  color: #5bc0eb;
+}
+
+/* --- CHOOSE YOUR HOME --- */
+#cyhBody {
+  background-image: url("https://cdn.glitch.global/0fade302-1e5f-4f3a-bfb7-c3e1cea8fe7a/homeBG?v=1701166233208");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 30px;
+}
+
+#cyhText {
+  position: relative;
+}
+
+#cyhTitle {
+  font-size: 3em;
+  position: fixed;
+}
+
+#cyhMoney {
+  font-size: 1.2em;
+  position: fixed;
+  top: 6em;
+}
+
+@keyframes rattle {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  40% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  60% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  80% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#correctHouse {
+  position: fixed;
+  width: 150px;
+  height: 200px;
+  top: 150px;
+  left: 600px;
+}
+
+#correctHouse:hover {
+  content: url("https://cdn.glitch.global/0fade302-1e5f-4f3a-bfb7-c3e1cea8fe7a/hover%201.png?v=1701210232393");
+  animation: rattle 2s infinite;
+}
+
+#wrongHouse1 {
+  position: fixed;
+  width: 150px;
+  height: 200px;
+  top: 400px;
+  left: 100px;
+}
+
+#wrongHouse1:hover {
+  content: url("https://cdn.glitch.global/0fade302-1e5f-4f3a-bfb7-c3e1cea8fe7a/hover%202.png?v=1701210232891");
+  animation: rattle 2s infinite;
+}
+
+#wrongHouse2 {
+  position: fixed;
+  width: 150px;
+  height: 200px;
+  top: 500px;
+  right: 300px;
+}
+
+#wrongHouse2:hover {
+  content: url("https://cdn.glitch.global/0fade302-1e5f-4f3a-bfb7-c3e1cea8fe7a/hover%203.png?v=1701210233282");
+  animation: rattle 2s infinite;
+}
+
+#errorContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#errorMessage {
+  background-color: #d34850;
+  max-width: 60vh;
+  padding: 10px;
+  width: fit-content;
+  text-align: center;
+}
+
+#errorContainer.active {
+  display: flex;
+}
+
+#errorContainer.closed {
+  display: none;
+  pointer-events: none;
+}
+
+#okayBtn {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#okayBtn:visited {
+  color: #ffffff;
+}
+
+#okayBtn:hover {
+  color: #bbbbbb;
+}
+
+/* --- INFORMATION PAGE --- */
+#npBody {
+  padding: 30px;
+  top: 50px;
+  right: 100px;
+  left: 100px;
+}
+
+.pageTitle {
+  /*   border: 2px solid yellow; */
+  font-size: 25vw;
+  line-height: 20vw;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  /*   border: 2px solid red; */
+  position: fixed;
+  left: 2vw;
+  width: 30vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  position: relative;
+  top: 1vh;
+  font-size: 5vh;
+}
+
+.questions {
+  /*   border: 2px solid blue; */
+  position: relative;
+  margin-left: 30vw;
+  font-size: 3vh;
+  /*   width: 100%; */
+}
+
+.questions.active .content {
+  display: block;
+}
+
+.questions .content {
+  display: none;
+}
+
+.linkTF {
+  color: #5bc0eb;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.linkTF:hover {
+  color: #2399cc;
+}
+
+.linkTF:before {
+  content: "↗ ";
+}
+
+.exLinkTF {
+  color: #5bc0eb;
+  text-decoration: none;
+}
+
+.exLinkTF:hover {
+  color: #2399cc;
+}
+
+.exLinkTF:before {
+  content: "↗ ";
+}
+
+.dropTF {
+  cursor: pointer;
+}
+
+.dropTF:hover {
+  cursor: pointer;
+  color: #bbbbbb;
+}
+
+.dropTF:before {
+  content: "▾ ";
+}
+
+.menuBtn{
+/*   position: relative; */
+  color: white;
+  text-decoration: none;
+  bottom: 50px;
+}
+
+.menuBtn:visited{
+  color: white;
+  text-decoration: none;
+}
+
+.menuBtn:hover{
+  color: #BBBBBB;
+  text-decoration: none;
+}
+
+#aboutSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#aboutBG {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 60vw;
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+
+#aboutBG img {
+  max-width: 40vw;
+  height: auto;
+}
+
+#aboutSection.active {
+  display: flex;
+}
+
+#aboutSection.closed {
+  display: none;
+}
+
+#closeBtn {
+  color: #d34850;
+  text-decoration: none;
+}
+
+#closeBtn:hover {
+  color: #91141c;
+}
+
+.emphasized {
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+
+/* --- SOUND SCAPE BUILDER --- */
+.soundscapeJS {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#titleSS {
+  /*     border: 2px dotted lawngreen; */
+  /*   color: #FF4444; */
+  position: absolute;
+  top: 10vh;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5em;
+  z-index: 1;
+}
+
+#bigSS {
+  top: -1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linkSS {
+  /*   border: 2px dotted blue; */
+  color: #5bc0eb;
+  position: absolute;
+  font-size: 1em;
+  text-decoration: none;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.linkSS:before {
+  content: "↗ ";
+}
+
+.soundDescriptions {
+  /*   border: 3px solid salmon; */
+  background-color: black;
+  padding: 50px;
+  display: none;
+  position: absolute;
+  top: 45vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  text-align: center;
+}
+
+.soundDescriptions.active {
+  display: block;
+}

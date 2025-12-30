@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML demo</title>
+    <style>
+      /* Shine Effect */
+      .shine {
+        position: relative;
+        display: inline-block;
+      }
+      .shine::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        z-index: 2;
+        display: block;
+        width: 50%;
+        height: 100%;
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+        transform: skewX(-25deg);
+      }
+      .shine:hover::before {
+        animation: shine-effect 0.75s;
+      }
+      @keyframes shine-effect {
+        100% {
+          left: 125%;
+        }
+      }
+
+      /* Center Content */
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      h1, a {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="home.html">
+      <div class="shine">
+        <img
+          src="https://cdn.glitch.global/715d25cd-3696-4cd4-b4d0-6953bd8d4a8f/house2.png?v=1696994981224"
+          width="400"
+          height="200"
+        />
+      </div>
+    </a>
+    <h1>SEXY ESCAPE STRATEGIES ARE IN YOUR AREA</h1>
+
+    <a href="home.html">Go Home</a>
+    <space></space>
+    <a href="escape.html">Click to Download ESCAPE ROUTE</a>
+  </body>
+</html>

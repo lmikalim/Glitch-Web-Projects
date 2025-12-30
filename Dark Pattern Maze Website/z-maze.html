@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://glitch.com/favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Space+Grotesk&display=swap"
+    rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<style>
+  h2 {
+    margin-bottom: 10px;
+  }
+
+
+  h3 {
+    margin-bottom: 100px;
+
+  }
+  
+
+  
+  #maze{
+    width: 90vw;
+    transform: rotate(180deg);
+    z-index:-1;
+  }
+
+  .center-margin {
+    margin-left: 30vw;
+    
+    margin-right: 30vw;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    height: 300px;
+     /* Set a maximum height for the scrolling container */
+    
+    
+  }
+  
+  .mazeicon{
+      width: 10vw;
+  cursor: pointer;
+        z-index: 1;
+
+    position:relative;
+    
+  }
+  
+  .mazeblurb{
+
+     background: white;
+    color: #090909;
+    border-color: black;
+    border-radius:2px;
+    text-align: center;
+     position: absolute;
+    max-width: 200px;
+    padding: 10px;
+  }
+  
+  
+  #o{
+
+    top:  -60vh;
+    left: 20vw;
+    
+  }
+  
+  
+  #c{
+    
+    top:  -50vh;
+    left: 50vw;
+    
+  }
+
+  
+  #f{
+    top:-90vh;
+    left:60vw;
+  }
+  
+  #h{
+    width:10vw;
+    top:-100vh;
+    left:-5vw;
+  }
+  
+  #cmp{
+    width:10vw;
+    top:-140vh;
+    left:20vw;
+  }
+  
+  #otext{
+  
+    bottom: -100px;
+    left: 28vw;
+ 
+  }
+  
+  #ctext{
+     bottom:  -20vh;
+    left: 47vw;
+  }
+  
+  #ftext{
+     bottom:  30vh;
+    left: 70vw;
+  }
+  
+  #htext{
+     bottom:  20vh;
+    left: 50vw;
+  }
+  
+  #cmptext{
+     bottom:  20vh;
+    left: 28vw;
+  }
+  
+  #key{
+  
+    width:200px;
+
+  }
+  a{
+    text-decoration:none;
+  }
+  
+  #exitthemaze{
+    margin-bottom:0;
+  }
+</style>
+<body>
+  <a href="index.html">
+    <img
+      id="homebtn"
+      src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/house.PNG?v=1700442295040"
+    />
+  </a>
+  <div class = "centered-content">
+    <h1>
+    The Maze
+  </h1>
+   <h3>
+     Click icons to explore other dark patterns & click blurbs to learn more
+     
+    </h3>
+   
+<img id = "maze" src = "https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/Maze.png?v=1701113200843">
+
+    <a href = "resources.html">
+   
+      
+      <h2 id = "exitthemaze">
+   Exit the Maze
+  </h2>
+       <img id = "bounce" src = "https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/key.png?v=1701161188570">
+    </a>
+
+  </div>
+
+    <img
+       class = "mazeicon" id = "o"
+      src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/o-icon.PNG?v=1701146371063"
+    />
+  
+  <a href = "https://www.deceptive.design/types/obstruction">
+   <p class = "mazeblurb" id = "otext">
+    Obstruction uses layers of inconvenience to <br>
+    dissuade users from carrying out tasks like <br>
+    deleting their accounts.
+    
+  </p>
+  </a>
+ 
+  
+  <img
+       class = "mazeicon" id = "c"
+      src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/c-icon.PNG?v=1701146363648"
+    />
+  <a href = "https://www.deceptive.design/types/confirmshaming">
+    <p  class = "mazeblurb" id = "ctext">
+    Confirmshaming uses targeted language<br>
+    to shame users into accepting certain options<br>
+
+    
+  </p>
+  </a>
+
+  
+  
+  <img
+       class = "mazeicon" id = "f"
+      src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/f-icon.PNG?v=1701146365682"
+    />
+  
+  <a href = "https://www.deceptive.design/types/forced-action">
+    <p class = "mazeblurb" id = "ftext">
+    Forced action frames an optional choice(usually to give up data) <br>
+    as necessary in exchange for a service the user wants.
+  </p>
+  
+  </a>
+  
+
+  
+  
+   <img
+       class = "mazeicon" id = "h"
+      src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/head.PNG?v=1701149246143">
+  
+  <a href = "https://www.deceptive.design/types/hidden-costs">
+   <p class = "mazeblurb" id = "htext">
+    Hidden costs are often added at checkout <br>
+    and overlookedby users distracted by the initial promise of low prices
+  </p>
+  </a>
+ 
+  
+  
+  <img class = "mazeicon" id = "cmp"
+       src = "https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/cpro-icon.png?v=1701218132590"
+       >
+  <a href = "https://www.deceptive.design/types/comparison-prevention">
+  <p class = "mazeblurb" id = "cmptext">
+    Comparison prevention is when users  are provided chocies in an intentionally <br>
+     complex and confusing format to inhibit accurate comparisons 
+    
+   
+    
+  </p>
+  </a>
+</body>
+</html>

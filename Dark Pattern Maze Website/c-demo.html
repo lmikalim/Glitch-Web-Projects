@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Space+Grotesk&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+      /* Add your custom styles here */
+      body {
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      .eyes {
+        width: 30vw;
+        position: absolute;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .eyes2 {
+        transform: scaleX(-1);
+        width: 10vw;
+        position: absolute;
+        display: block;
+        margin-left: 80vw;
+        margin-right: 0vw;
+      }
+
+      .eyes3 {
+        transform: scaleX(-1);
+        width: 50vw;
+        position: absolute;
+        display: block;
+        margin-left: 10vw;
+        margin-right: 0vw;
+        margin-top: 50vh;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 10px; /* Added border-radius for rounded corners */
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .popup {
+        color: #090909;
+      }
+
+      .modal.shaking {
+        animation: shake 0.5s;
+      }
+
+      @keyframes shake {
+        10%, 90% {
+          transform: translate(-50%, -50%) translate3d(-5px, 0, 0);
+        }
+
+        20%, 80% {
+          transform: translate(-50%, -50%) translate3d(5px, 0, 0);
+        }
+
+        30%, 50%, 70% {
+          transform: translate(-50%, -50%) translate3d(-5px, 0, 0);
+        }
+
+        40%, 60% {
+          transform: translate(-50%, -50%) translate3d(5px, 0, 0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html">
+      <img id="homebtn" src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/house.PNG?v=1700442295040">
+    </a>
+    <!-- Your existing HTML content -->
+
+    <!-- Custom Confirm Modal -->
+
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="customConfirm">
+      <p class="popup">Would you like to sign up for notifications from Dark Pattern Maze?</p>
+      <button id="btnunderline" onclick="cancel()">No, I want my data stolen</button>
+      <button onclick="ok()">Agree</button>
+    </div>
+
+    <img class="eyes" src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/Eyes_Animation.gif?v=1700763313053">
+
+    <img class="eyes2" src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/Eyes_Animation.gif?v=1700763313053">
+    <img class="eyes3" src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/Eyes_Animation.gif?v=1700763313053">
+    <script>
+      // Function to show the custom confirm
+      function showCustomConfirm() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('customConfirm').style.display = 'block';
+      }
+
+      // Function to handle cancel button click
+      function cancel() {
+        // go to the page 'c-exp.html'
+        window.location.href = 'c-exp.html';
+      }
+
+      // Function to handle OK button click
+      function ok() {
+        // go to the page 'c-exp.html'
+        window.location.href = 'c-exp.html';
+      }
+
+      // Automatically show the custom confirm when the page loads
+      window.onload = function () {
+        showCustomConfirm();
+      };
+
+      // Shake the modal every 2.5 seconds
+      setInterval(function () {
+        $("#customConfirm").addClass("shaking");
+
+        // Remove the shaking class after the animation completes
+        setTimeout(function () {
+          $("#customConfirm").removeClass("shaking");
+        }, 500);
+      }, 2500);
+    </script>
+  </body>
+</html>

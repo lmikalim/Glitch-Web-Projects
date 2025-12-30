@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://glitch.com/favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Space+Grotesk&display=swap"
+    rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<style>
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .hidden-paragraph {
+    opacity: 0;
+    /* Initially hide the h3 elements */
+    transition: opacity 0.5s;
+  }
+
+  h1 {
+    margin-bottom: 100px;
+  }
+
+  h3 {
+    margin-bottom: 100px;
+    opacity: 0;
+    /* Initially hide the h3 elements */
+    transition: opacity 0.5s;
+  }
+
+  .center-margin {
+    margin-left: 30vw;
+    
+    margin-right: 30vw;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    height: 300px;
+     /* Set a maximum height for the scrolling container */
+  }
+  
+   
+    #bounce{
+      margin-bottom:50px;
+    }
+</style>
+<body>
+  <a href="index.html">
+    <img
+      id="homebtn"
+      src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/house.PNG?v=1700442295040"
+    />
+  </a>
+
+  <div class="centered-content">
+    <h1>Obstruction</h1>
+
+    <h2>Explanation</h2>
+    <div class="center-margin">
+      <h3 class="hidden-paragraph">
+        Obstruction works in multiple ways in this example to make it discourage you from deleting your account. First, you have
+        to find the right option from a long list of possible options. Afterwards, multiple layers of confirmation dissuade you
+        due to their inconvenience.
+      </h3>
+    </div>
+
+   
+    <div class = "center-margin">
+       <h2 class="hidden-paragraph">
+      Google LLC and Google Ireland Limited were fined €150 million for a dark pattern design that made it easy for users to accept
+      all cookies on their device, but extremely difficult and obstructed to change the setting afterwards.
+    </h2>
+      <h3 class="hidden-paragraph">from the Deceptive Design legal enforcement database</h3>
+      
+    </div>
+    
+  </div>
+
+  <a href="z-maze.html">
+    <img
+      id="bounce"
+      src="https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/left-point.PNG?v=1701146368141"
+    />
+  </a>
+</body>
+</html>

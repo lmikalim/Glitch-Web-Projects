@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://glitch.com/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("password").value;
+
+      // Check if the password is correct
+      if (password === "362a") {
+        // Redirect to 'agent.html'
+        window.location.href = "agent.html";
+      } 
+       if (password === "362A") {
+        // Redirect to 'agent.html'
+        window.location.href = "agent.html";
+      } 
+      else {
+        // Display an error message
+        alert("Incorrect password. Please try again.");
+      }
+
+      // Prevent the form from submitting
+      return false;
+    }
+  </script>
+</head>
+
+<body>
+  <img id="logo" src="https://cdn.glitch.global/61d741f7-1203-4d6b-aa3f-6ef8b9fd20be/Screen%20Shot%202023-12-29%20at%2011.18.20%20PM.png?v=1703920724234"><img>
+  <h1>
+    CASE DATABASE
+  </h1>
+  <h3>
+    For your eyes only
+  </h3>
+  <form onsubmit="return checkPassword()">
+    <label for="password">Agent ID</label><br>
+    <input  id="password" name="password" value = "###X"><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>

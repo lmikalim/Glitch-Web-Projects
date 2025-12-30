@@ -1,0 +1,20 @@
+/* a minimalist set of CSS resets */
+
+/* adjust typography defaults */
+
+@font-face {
+  font-family: 'Safira March';
+  src: url('https://cdn.glitch.global/dddc3d07-1def-4d04-b448-4302a986e858/Safira%20March.otf?v=1704837649599') format('opentype');
+}
+
+body {
+  background-color: #191516;
+  color: #F4EDE7; 
+  margin: 1rem;
+
+  line-height: 1.5;
+}
+
+h1{
+  font-family: 'Safira March', sans-serif;
+}

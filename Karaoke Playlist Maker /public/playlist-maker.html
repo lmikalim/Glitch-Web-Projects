@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Maker</title>
+      <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <h1>Create Your Karaoke Playlist</h1>
+
+    <div id="question-container" class="question">
+        <!-- First question will be shown here initially -->
+        <label for="vocal-range-slider">What is your vocal range?</label>
+        <input type="range" id="vocal-range-slider" class="slider" min="1" max="10" step="1">
+        <button id="next-button" onclick="handleNextQuestion()">Next</button>
+    </div>
+
+    <div id="language-container" class="question hidden">
+        <!-- Languages question, shown after mood question -->
+        <label>What languages do you sing in?</label>
+        <div id="languages-list" class="languages">
+            <!-- Checkboxes will be dynamically added here -->
+        </div>
+        <button id="finish-button" onclick="finishPlaylist()">Finish</button>
+    </div>
+
+    <script>
+        const languages = ["English", "Spanish", "French", "German"]; // Example languages, will be dynamically fetched
+        let userPreferences = {};
+
+        function handleNextQuestion() {
+            const sliderValue = document.getElementById('vocal-range-slider').value;
+            userPreferences.vocalRange = sliderValue;
+
+            // Show mood question
+            document.getElementById('question-container').innerHTML = `
+                <label for="mood-slider">What mood do you like?</label>
+                <input type="range" id="mood-slider" class="slider" min="1" max="10" step="1">
+                <div>
+                    <span>1 (Slow songs)</span>
+                     <span>1 style = "float: center"</span>
+                    <span style="float: right;">10 (High energy)</span>
+                </div>
+                <button onclick="handleLanguageQuestion()">Next</button>
+            `;
+        }
+
+        function handleLanguageQuestion() {
+            const moodValue = document.getElementById('mood-slider').value;
+            userPreferences.mood = moodValue;
+
+            // Hide mood question and show language question
+            document.getElementById('question-container').classList.add('hidden');
+            document.getElementById('language-container').classList.remove('hidden');
+
+            // Dynamically add language checkboxes
+            const languagesList = document.getElementById('languages-list');
+            languages.forEach(language => {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = language;
+                checkbox.value = language;
+
+                const label = document.createElement('label');
+                label.htmlFor = language;
+                label.innerText = language;
+
+                const div = document.createElement('div');
+                div.appendChild(checkbox);
+                div.appendChild(label);
+
+                languagesList.appendChild(div);
+            });
+        }
+
+        function finishPlaylist() {
+            const selectedLanguages = [];
+            document.querySelectorAll('#languages-list input:checked').forEach(checkbox => {
+                selectedLanguages.push(checkbox.value);
+            });
+            userPreferences.languages = selectedLanguages;
+
+            console.log('User Preferences:', userPreferences);
+            // Send data to server or process further
+        }
+    </script>
+
+</body>
+</html>

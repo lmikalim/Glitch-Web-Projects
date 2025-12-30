@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script>
+      $(document).ready(function () {
+        $("#accordion").accordion();
+      });
+      
+    </script>
+    
+  
+  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px; /* Added border-radius for rounded corners */
+    }
+
+    .indextext {
+      margin-bottom: 10px; /* Added margin to create space between buttons */
+      display: block; /* Set display to block for vertical stacking */
+      width: 100%; /* Make buttons take full width */
+      text-align: left; /* Align text to the left */
+      padding: 5px; /* Add padding for better visual appearance */
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    #popuph2 {
+      color: #090909;
+    }
+
+    .popup {
+      color: #090909;
+      cursor: pointer;
+    }
+
+    .indextext {
+      color: #090909;
+      cursor: pointer;
+      background-color: white;
+    }
+    button {
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #090909;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /*   background-color: rgba(0, 0, 0, 0.5); */
+    }
+
+    #btnunderline {
+      margin-left: 250px;
+      margin-top: -100px;
+    }
+    
+     #titleh2{
+       position:absolute;
+       top:10vh;
+       left:35vw;
+       
+  
+    }
+    
+    #cage{
+     width: 13vw;
+    top:0;
+      margin-left:20vw;
+      position:absolute;
+    
+    }
+    
+    #cage2{
+        width: 9vw;
+      margin-left:80vw;
+         position:absolute;
+    }
+    
+  .modal.shaking {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate(-50%, -50%) translate3d(-5px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate(-50%, -50%) translate3d(5px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate(-50%, -50%) translate3d(-5px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate(-50%, -50%) translate3d(5px, 0, 0);
+  }
+}
+    
+  </style>
+
+  <body>
+     <img id = "cage" src = "https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/Cage%202.png?v=1701155828434">
+    
+    <img id= "cage2" src = "https://cdn.glitch.global/766de571-e01b-47b4-8212-a9cf203ea870/Cage%202.png?v=1701155828434">
+    
+
+      <h2 id = "titleh2">Challenge: Delete your account!</h2>
+
+    
+   
+
+    <!-- Your existing HTML content -->
+
+    <!-- Custom Confirm Modal -->
+
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="customConfirm">
+      <div class="centered-content">
+        <h2 id="popuph2">Settings</h2>
+      </div>
+
+      <!-- Page 1: Ask for some information -->
+      <div class="page" id="page1">
+        <button class="indextext" onclick="goNextPage()">Profile Settings &gt</button>
+        <button class="indextext" onclick="goNextPage()">
+          Account Management &gt
+        </button>
+        <button class="indextext" onclick="goNextPage()">Subscriptions &gt</button>
+        <button class="indextext" onclick="goNextPage()">Privacy &gt</button>
+        <button class="indextext" onclick="goNextPage()">Data Tracking &gt</button>
+        <button class="indextext" onclick="goNextPage()">
+          Manage Notifications &gt
+        </button>
+        <button class="indextext" onclick="nextPage()">
+          Deactivate Account &gt
+        </button>
+
+      </div>
+
+      <!-- Page 2: Ask for email -->
+      <div class="page" id="page2" style="display: none">
+        <p class="popup">Are you sure you want to delete your account?</p>
+    
+      
+        <button onclick="goNextPage()">Cancel</button>
+        <button id="btnunderline" onclick="nextPage()"> Confirm</button>
+      </div>
+ 
+
+    <div class="page" id="page3" style="display: none">
+      <p class="popup">Are you 100% sure?:</p>
+      <p>
+        You will not be able to undo this
+      </p>
+    
+      <button onclick="nextPage()">Agree</button>
+      
+         </div>
+    <div class="page" id="page4" style="display: none">
+      <p class="popup">Confirm?</p>
+     
+    
+      <button onclick="submitForm()">Agree</button>
+    </div>
+      
+      
+    </div>
+    <script>
+      var currentPage = 1; // Track the current page
+
+      // Function to show the custom confirm
+      function showCustomConfirm() {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("customConfirm").style.display = "block";
+        showPage(currentPage); // Show the initial page
+      }
+
+      // Function to show a specific page
+      function showPage(pageNumber) {
+        // Hide all pages
+        var pages = document.getElementsByClassName("page");
+        for (var i = 0; i < pages.length; i++) {
+          pages[i].style.display = "none";
+        }
+
+        // Show the specified page
+        document.getElementById("page" + pageNumber).style.display = "block";
+      }
+
+      // Function to handle next button click
+      function nextPage() {
+        if (currentPage < 5) {
+          currentPage++;
+          showPage(currentPage);
+        }
+      }
+
+      // Function to handle skip step button click
+      function skipStep() {
+        // Perform skip step logic
+        // For now, just go to the page 'fa-exp.html'
+        window.location.href = "o-exp.html";
+      }
+
+      // Function to handle submit button click
+      function submitForm() {
+        // Perform form submission logic
+        // For now, just go to the page 'fa-exp.html'
+        window.location.href = "o-exp.html";
+      }
+
+      // Automatically show the custom confirm when the page loads
+      window.onload = function () {
+        showCustomConfirm();
+      };
+
+      function goNextPage() {
+        window.location.href = "o-exp-L.html";
+      }
+
+      function goBack() {
+        showPage(currentPage - 1);
+      }
+      
+         
+      
+$(document).ready(function() {
+  
+   setInterval(function () {
+    $("#customConfirm").addClass("shaking");
+
+    // Remove the shaking class after the animation completes
+    setTimeout(function () {
+      $("#customConfirm").removeClass("shaking");
+    }, 500);
+  }, 2000);
+  
+    bobImages('#cage', 5);
+    bobImages('#cage2', 7);
+  });
+
+  function bobImages(selector, distance) {
+    $(selector).animate(
+      { top: `+=${distance}px` }, 
+      {
+        duration: 1000, // Adjust the duration as needed
+        complete: function() {
+          $(this).animate(
+            { top: `-=${distance}px` },
+            {
+              duration: 1000,
+              complete: function() {
+                // Recursively call bobImages to create a continuous bobbing effect
+                bobImages(selector, distance);
+              }
+            }
+          );
+        }
+      }
+    );
+  }
+
+
+
+    </script>
+  </body>
+</html>
